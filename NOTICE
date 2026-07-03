@@ -1,0 +1,26 @@
+auction_harness
+Copyright 2026 earthskyisbig
+
+This product is a derivative work of:
+
+  harness (The Team-Architecture Factory for Claude Code)
+  Copyright robin (https://github.com/revfactory)
+  Licensed under the Apache License, Version 2.0
+  Source: https://github.com/revfactory/harness
+
+Modifications made in this fork (Apache-2.0 §4 change notice):
+
+  - Phase 6 (Validation) rewritten as a bounded convergence loop:
+    added 6-0 loop control (hard/soft gates, stopping conditions,
+    budget guardrails), 6-L loop body, 6-7 coverage critic
+    (loop-until-dry), 6-8 termination report; 6-1..6-6 converted to
+    gate-score-returning steps; adversarial trigger verification option.
+  - Phase 7 (Evolution) rewritten as a self-improvement loop:
+    added 7-0 loop control with human approval gate and Phase 6
+    re-validation (regression rollback); 7-1 telemetry signal
+    collection; 7-4 automatic evolution triggers.
+  - Added references/validation-loop.md (loop control detail,
+    domain-tier presets, state schema, prompt templates).
+  - Budget-allocation refinements: execution test (6-3) runs only
+    after hard gates pass; coverage critic (6-7) uses a separate
+    budget (C_budget) to prevent starvation.
