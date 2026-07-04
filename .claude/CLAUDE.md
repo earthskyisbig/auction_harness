@@ -24,3 +24,4 @@
 |------|----------|------|------|
 | 2026-07-03 | 초기 구성 (경매 투자분석 파이프라인, 에이전트 5 + 오케스트레이터 + 랭커 스킬) | 전체 | 하네스 신규 구축 |
 | 2026-07-04 | 수집 단계에 템플릿 기반 필터 크롤러 번들(`scrape_auction_filtered.py` + templates/) | agents/auction-collector, skills/auction-orchestrator/scripts | 기본 스크래퍼가 지역·용도 서버필터 불가(기본 100건만) → 검증된 일반화 크롤러로 교체. 단지명·동·호·저감율·매각기일까지 수집 |
+| 2026-07-04 | 크롤러 다중 페이지그룹 수집(100건 한도 극복) + 시/군/구 완전성 한계 문서화 | skills/auction-orchestrator/scripts/scrape_auction_filtered.py | 100건 초과 수집 필요 사례(서울남부 다세대) 발견. nextPage_btn으로 그룹 순회. 단, 시/군/구 서버필터 미적용은 근본 한계(사후 필터만) — 소규모 정밀검색은 사이트가 정답 |
