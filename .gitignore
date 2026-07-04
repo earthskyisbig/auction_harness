@@ -1,3 +1,4 @@
 .env
 _workspace/
 *.csv
+.DS_Store

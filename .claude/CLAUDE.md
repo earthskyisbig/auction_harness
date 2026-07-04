@@ -10,7 +10,7 @@
 ## 에이전트 (`.claude/agents/`)
 | 에이전트 | 단계 | 사용 스킬(재사용) |
 |----------|------|-------------------|
-| auction-collector | 1. 수집 | court-auction-scraper |
+| auction-collector | 1. 수집 | 번들 `scrape_auction_filtered.py` (court-auction-scraper 패턴 기반, 지역·용도 필터) |
 | rights-analyzer | 2. 권리분석 | npl-analyzer |
 | market-valuator | 3. 시세평가 | realprice-flow, apt-value |
 | profitability-calculator | 4. 수익성 | npl-analyzer |
@@ -23,3 +23,4 @@
 | 날짜 | 변경 내용 | 대상 | 사유 |
 |------|----------|------|------|
 | 2026-07-03 | 초기 구성 (경매 투자분석 파이프라인, 에이전트 5 + 오케스트레이터 + 랭커 스킬) | 전체 | 하네스 신규 구축 |
+| 2026-07-04 | 수집 단계에 템플릿 기반 필터 크롤러 번들(`scrape_auction_filtered.py` + templates/) | agents/auction-collector, skills/auction-orchestrator/scripts | 기본 스크래퍼가 지역·용도 서버필터 불가(기본 100건만) → 검증된 일반화 크롤러로 교체. 단지명·동·호·저감율·매각기일까지 수집 |

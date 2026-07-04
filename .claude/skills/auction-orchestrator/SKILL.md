@@ -40,7 +40,7 @@ description: "한국 법원경매 물건을 투자 관점에서 처음부터 끝
 ## 재사용 스킬 (중복 생성 금지)
 
 각 에이전트는 아래 기존 글로벌 스킬을 사용한다. 새로 만들지 않는다:
-- 수집 → `court-auction-scraper`
+- 수집 → 번들 `scripts/scrape_auction_filtered.py` (court-auction-scraper 스텔스 패턴 기반 + 지역·용도 서버필터 + 템플릿). 예: `-t scripts/templates/gangnam_apt.json`
 - 권리분석/수익성 근거 → `npl-analyzer`
 - 시세평가 → `realprice-flow`, `apt-value`
 - 랭킹/리포트 → `auction-investment-ranker` (이 하네스 전용 신규 스킬)
